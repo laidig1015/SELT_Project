@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+  match 'users/destroy', to: 'users#destroy', via: :post
   resources :users do
     member do
       get :following, :followers
@@ -17,6 +18,8 @@ SampleApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+
+  match 'users/search_users', to: 'users#search', via: :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
