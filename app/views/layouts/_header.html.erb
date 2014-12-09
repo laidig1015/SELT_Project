@@ -8,9 +8,9 @@
 
       <nav>
 <%= link_to image_tag("logo.png", alt: "Rails", id: "chatlogo")%>
-       <%=submit_tag "Search", :class => "btn", :class => "icon-search", id: "search-button"%>
        <%= form_tag(users_path, :method => "get", class: "navbar-form", id: "search-form") do %>
         <div class="container">
+        <%=submit_tag "Search", :class => "btn", :class => "icon-search", id: "search-button"%>
         <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Users", id: "search-users" %>
         <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
            of using a Rails form helper -->
