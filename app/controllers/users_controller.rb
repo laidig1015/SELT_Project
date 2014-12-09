@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     #@users = User.paginate(page: params[:page])
     if params[:search]
       @users = User.search(params[:search]).order("created_at DESC")
-      flash[:notice] = "Search Returned Following Users"
     else
       @users = User.order("created_at DESC")
     end
@@ -66,28 +65,6 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
-
-
-  def search
-    search = params["search_terms"]
-    if search.blank? then
-      flash[:notice] = "Invalid Search Term"
-      redirect_to users_path
-    else
-      all_results = User::search(search)
-      if all_results.empty? then
-        flash[:notice] = "No matching users were found on Chatter"
-        redirect_to users_path
-      else
-        @search_results = all_results
-        @search_term = search
-        flash[:notice] = "Search found the following results"
-      end
-    end
-  end
-
-
-
 
   private
 

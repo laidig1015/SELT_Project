@@ -16,7 +16,8 @@
       <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search Users" %>
       <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
            of using a Rails form helper -->
-      <button class="btn" type="submit"><i class="icon-search"></i></button>
+      <%=submit_tag "Search", :class => "btn", :class => "icon-search"%>
+      
     </div>
     <% end %>
 

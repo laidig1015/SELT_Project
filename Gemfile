@@ -1,15 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.2.9'
+gem 'pg'
 gem 'bootstrap-sass'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~>3.0.0'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'jquery-rails'
+gem 'therubyracer',  platforms: :ruby
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'guard-spork'
@@ -33,8 +34,4 @@ group :test do
   # gem 'launchy', '2.1.0'
   # gem 'rb-fsevent', '0.9.1', :require => false
   # gem 'growl', '1.0.3'
-end
-
-group :production do
-  gem 'pg'
 end
