@@ -1,4 +1,5 @@
 SampleApp::Application.routes.draw do
+
   match 'users/destroy', to: 'users#destroy', via: :post
   resources :users do
     member do

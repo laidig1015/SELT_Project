@@ -10,6 +10,10 @@ gem 'bootstrap-will_paginate'
 gem 'jquery-rails'
 gem 'therubyracer',  platforms: :ruby
 
+gem 'carrierwave',             '0.10.0'
+gem 'mini_magick',             '3.8.0'
+gem 'fog',                     '1.23.0'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'

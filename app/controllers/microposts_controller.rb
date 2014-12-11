@@ -5,11 +5,10 @@ class MicropostsController < ApplicationController
   def create
     @micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
-      flash[:success] = "Message Posted to Your Wall!"
-      redirect_to root_url
+      flash[:success] = "Micropost created!"
+      redirect_to current_user
     else
-      @feed_items = []
-      render 'static_pages/home'
+      render 'shared/_micropost_form'
     end
   end
 
@@ -19,6 +18,10 @@ class MicropostsController < ApplicationController
   end
 
   private
+
+    def micropost_params
+      params.require(:micropost).permit(:content, :picture)
+    end
 
     def correct_user
       @micropost = current_user.microposts.find_by_id(params[:id])
