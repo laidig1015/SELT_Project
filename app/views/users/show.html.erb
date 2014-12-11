@@ -7,10 +7,10 @@
         <%= @user.name %>
       </h1>
     </section>
+    About Me: <%= @user.bio %>
     <section>
       <%= render 'shared/stats' %>
     </section>
-    About Me: <%= @user.bio %>
   </aside>
   <div class="span8">
     <%= render 'follow_form' if signed_in? %>
