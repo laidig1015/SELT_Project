@@ -266,12 +266,17 @@ input {
   }
 }
 
+.pic{
+  display: block;
+}
+
 .content {
   display: block;
 }
 
 .timestamp {
   color: grayLight;
+  display: block;
 }
 
 aside {
