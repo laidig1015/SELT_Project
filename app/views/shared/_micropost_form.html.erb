@@ -3,10 +3,10 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "What's On Your Mind?..." %>
   </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
   <span class="picture">
-    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
 
 <script type="text/javascript">
