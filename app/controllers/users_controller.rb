@@ -8,14 +8,16 @@ class UsersController < ApplicationController
     #@users = User.paginate(page: params[:page])
     if params[:search]
       @users = User.search(params[:search]).order("created_at DESC")
+      @users = @users.paginate(:page => 1, :per_page => 5)
     else
       @users = User.order("created_at DESC")
+      @users = @users.paginate(:page => 1, :per_page => 5)
     end
   end
 
   def show
-    @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @user = User.find(params[:id]).paginate(:page => 1, :per_page => 5)
+    @microposts = @user.microposts.paginate(:page => 1, :per_page => 5)
   end
 
   def new
