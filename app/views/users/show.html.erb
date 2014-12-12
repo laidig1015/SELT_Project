@@ -12,13 +12,9 @@
     </section>
   </aside>
   <h3>About Me:</h3>
-      <% if @user.bio.empty? %>
-        <%= "It appears #{@user.name} hasn't created a biography!" %>
-      <% else %>
-        <ol>
-          <%= @user.bio  %>
-        </ol>
-      <%end%>
+      <ol>
+        <%= @user.bio  %>
+      </ol>
   <div class="span8">
     <%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
