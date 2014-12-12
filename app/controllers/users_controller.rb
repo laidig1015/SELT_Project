@@ -8,10 +8,10 @@ class UsersController < ApplicationController
     #@users = User.paginate(page: params[:page])
     if params[:search]
       @users = User.search(params[:search]).order("created_at DESC")
-      @users = @users.paginate(page: params[:page])
+      @users = @users.paginate(page: params[:page], :per_page => 5)
     else
       @users = User.order("created_at DESC")
-      @users = @users.paginate(page: params[:page])
+      @users = @users.paginate(page: params[:page], :per_page => 5)
     end
   end
 
