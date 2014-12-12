@@ -14,11 +14,14 @@
   <h3>About Me:</h3>
     <% if @user.bio.nil? %>
         <%= "It appears #{@user.name} hasn't created a biography!" %>
+        <br></br>
     <% else %>
       <% if @user.bio.empty? %>
         <%= "It appears #{@user.name} hasn't created a biography!" %>
+        <br></br>
       <% else %>
         <%= @user.bio  %>
+        <br></br>
       <% end %>
     <%end%>
   <div class="span8">
